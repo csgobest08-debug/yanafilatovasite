@@ -285,21 +285,7 @@ h1 {
 ========================= */
 
 
-.hero-photo img {
 
-    width:350px;
-
-    height:430px;
-
-    object-fit:cover;
-
-    border-radius:180px 180px 35px 35px;
-
-    box-shadow:
-
-    0 20px 50px rgba(70,40,20,.18);
-
-}
 
 
 /* =========================
@@ -824,4 +810,47 @@ h2 {
 }
 
 
+}
+/* Hero — текст + фото в ряд */
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1 1 55%; /* текст занимает 55% ширины */
+}
+
+.hero-photo {
+  flex: 0 0 40%; /* фото занимает 40% */
+  text-align: center;
+}
+
+.hero-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;        /* скругление углов */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  display: block;
+}
+
+/* Адаптив для планшетов и телефонов */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column-reverse; /* фото сверху, текст снизу */
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-photo {
+    flex: 0 0 auto;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .hero-text .button {
+    display: inline-block; /* кнопка остаётся по центру */
+  }
 }
